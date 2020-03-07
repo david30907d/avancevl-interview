@@ -1,5 +1,10 @@
 # My Django React Template[![Build Status](https://travis-ci.com/david30907d/My-Django-React-Template.svg?branch=master)](https://travis-ci.com/david30907d/My-Django-React-Template)
 
+# 帳號密碼
+
+* account: `admin`
+* password: `adminadmin`
+
 # My Django React Template
 
 ## Install
