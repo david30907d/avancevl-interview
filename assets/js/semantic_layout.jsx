@@ -29,10 +29,14 @@ export default class HomepageLayout extends Component {
   }
 
   componentDidMount() {
-    fetch("http://127.0.0.1:8000/api/get/restaurant")
+    let now = new Date();
+    let day = now.getDay()
+    let hour = now.getHours()
+    let minute = now.getMinutes()
+    fetch(`http://127.0.0.1:8000/api/get/restaurant?day=${day}&hour=${hour}&minute=${minute}`)
       .then(res => res.json())
       .then(res => {
-        console.log(res)
+
         let restaurants = res.map((res_obj) => {
           return (
             <Label key={res_obj.id}>
@@ -68,24 +72,18 @@ export default class HomepageLayout extends Component {
             <Container text>
               <Header
                 as='h1'
-                content='普及資料與智慧運算'
+                content='avancevl'
                 inverted
                 style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
               />
               <Header
                 as='h1'
-                content='實驗室'
+                content='餐廳資訊'
                 inverted
                 style={{ fontSize: '4em', fontWeight: 'normal' }}
               />
-              <Header
-                as='h2'
-                content="if you can't explain it simply, you don't understand it well enough --Albert Einstein"
-                inverted
-                style={{ fontSize: '1.7em', fontWeight: 'normal' }}
-              />
               <Button primary size='huge'>
-                體驗API
+                體驗訂餐
                 <Icon name='right arrow' />
               </Button>
             </Container>
